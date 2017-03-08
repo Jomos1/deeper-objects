@@ -39,6 +39,21 @@ var preview = {
 * Return 	isEnabled (string)
 */
 
+function isItEnabled(data){
+	// console.log(data);
+	for (var key in data){
+		// console.log(data[key]);
+		if (key === "enabled") {
+			console.log(data[key]);
+			isItEnabled += data[key];
+		}
+	}
+	console.log(typeof isItEnabled);
+	return isItEnabled;
+}
+
+isItEnabled(preview);
+
 /*
 * Function that changes the value from the key "enabled" to true, and returns 
 * the value from the key "enabled"
