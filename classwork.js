@@ -39,6 +39,8 @@ var preview = {
 * Return 	isEnabled (string)
 */
 
+console.log("\n*** Start ***\n")
+
 function isItEnabled(data){
 	// console.log(data);
 	for (var key in data){
@@ -54,6 +56,8 @@ function isItEnabled(data){
 
 isItEnabled(preview);
 
+console.log("\n*** End ***\n")
+
 /*
 * Function that changes the value from the key "enabled" to true, and returns 
 * the value from the key "enabled"
@@ -61,12 +65,46 @@ isItEnabled(preview);
 * Return 	value from key enabled (boolean)
 */
 
+console.log("\n*** Start ***\n")
+
+function returnEnabled(data){
+	// console.log(data.enabled);
+	// data.enabled = true;
+	for (var key in data){
+		console.log(data[key]);
+		if (key === "enabled") {
+			data[key] = true;
+		}
+	}
+	return data.enabled;
+}
+
+console.log(returnEnabled(preview));
+
+
+console.log("\n*** End ***\n")
 /*
 * Function that retrieves the urls only from the key "resolutions" 
 * , stores the values in an array called "urls", and returns the created array
 * 
 * Return 	urls (array)
 */
+console.log("\n*** Start ***\n")
+
+function urlReso(data){
+	console.log(data.images[0].resolutions);
+	// for (var url = 0; i < data.images[0].resolutions; url++){
+		// console.log(url)
+	// }
+	for (var key in data.images[0].resolutions){
+		console.log(data.images[0].reolutions[key].url);
+		urls.push(data.images[0].reolutions[key].url);
+	}
+}
+
+console.log(urlReso(preview));
+
+console.log("\n*** End ***\n")
 
 /*
 * Function that retrieves the first nested key and value pairing
